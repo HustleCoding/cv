@@ -5,9 +5,9 @@ import {
   MailIcon,
   PhoneIcon,
   LinkedinIcon,
-  GithubIcon,
   CodeIcon,
   BrainIcon,
+  GithubIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
