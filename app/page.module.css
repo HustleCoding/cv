@@ -1,0 +1,151 @@
+.container {
+  min-height: calc(100vh - 60px); /* Adjust based on your header height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  animation: fadeInUp 1s ease-out;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--primary-color-light);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.ctaButton, .ctaButtonSecondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.ctaButton {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-color-light);
+}
+
+.ctaButtonSecondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.ctaButtonSecondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.ctaIcon {
+  margin-left: 0.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+.socialLinks a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--primary-color-light);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaButton, .ctaButtonSecondary {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}

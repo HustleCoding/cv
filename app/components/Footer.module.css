@@ -1,0 +1,28 @@
+.footer {
+    background-color: var(--primary-color-dark);
+    color: #fff;
+    padding: 2rem;
+  }
+  
+  .footerContent {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social a:hover {
+    color: var(--accent-color);
+  }

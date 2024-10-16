@@ -1,49 +1,51 @@
-import { Archivo } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
 
-export const metadata: Metadata = {
-  title: "Florin Dobinciuc - Frontend Developer & Deep Work Practitioner",
-  description:
-    "Frontend Developer with 3+ years of experience in React and Next.js. Passionate about deep work and productivity in software development.",
-  keywords: [
-    "Frontend Developer",
-    "React",
-    "Next.js",
-    "Deep Work",
-    "Productivity",
-    "Web Development",
-  ],
-  authors: [{ name: "Florin Dobinciuc" }],
-  openGraph: {
-    title: "Florin Dobinciuc - Frontend Developer",
-    description:
-      "Experienced Frontend Developer specializing in React and Next.js, with a focus on deep work practices.",
-    url: "https://florindobinciuc.xyz",
-    siteName: "Florin Dobinciuc Portfolio",
-    images: [
-      {
-        url: "/profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Florin Dobinciuc - Frontend Developer",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-};
+const Navigation = dynamic(() => import("./components/Navigation"), {
+  ssr: false,
+});
+import Footer from "./components/Footer";
 
-const archivo = Archivo({
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-archivo",
 });
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Florin Dobinciuc - Full Stack Engineer",
+  description:
+    "Personal website and blog of Florin Dobinciuc, Full Stack Engineer",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      url: "/favicon.svg",
+    },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={archivo.variable}>{children}</body>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+      </head>
+      <body className={poppins.className}>
+        <div className={styles.container}>
+          <Navigation />
+          <main className={styles.main}>{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

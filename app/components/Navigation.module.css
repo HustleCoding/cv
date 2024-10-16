@@ -1,0 +1,76 @@
+.nav {
+  background-color: var(--card-background);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContent {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navItems {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navItems li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navItems li a:hover {
+  color: var(--primary-color);
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .navItems {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-background);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+
+  .navItems li {
+    margin: 1rem 0;
+  }
+}
